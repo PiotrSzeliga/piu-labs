@@ -1,0 +1,210 @@
+/* === Reset & base === */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  background: #f5f6f8;
+  color: #333;
+  transition: background 0.3s ease, color 0.3s ease;
+  animation: fadeIn 0.6s ease both;
+  padding: 2rem 1rem;
+}
+
+/* === Shared heading === */
+h1,
+h2,
+h3 {
+  color: #1a1a1a;
+  letter-spacing: 0.5px;
+}
+
+h1 {
+  font-size: 2rem;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+/* === INDEX (LAB 1) PAGE === */
+body.index-page {
+  justify-content: center;
+  gap: 2rem;
+}
+
+.index-page nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  background: #fff;
+  padding: 2rem 3rem;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.index-page nav:hover {
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+}
+
+.index-page nav a {
+  display: block;
+  width: 200px;
+  text-align: center;
+  text-decoration: none;
+  color: #fff;
+  background: #3b6ef7;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.index-page nav a:hover {
+  background: #335ed8;
+  transform: translateY(-2px);
+}
+
+.index-page nav a:active {
+  transform: translateY(1px);
+}
+
+/* === LOGIN PAGE === */
+form {
+  background: #fff;
+  padding: 2.5rem;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  width: 320px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  transition: box-shadow 0.3s ease, background 0.3s ease;
+}
+
+form:hover {
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+}
+
+form h1 {
+  margin-bottom: 0.5rem;
+}
+
+label {
+  font-size: 0.9rem;
+  margin-bottom: 0.2rem;
+  color: #444;
+}
+
+input {
+  width: 100%;
+  padding: 0.7rem 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+input:focus {
+  border-color: #3b6ef7;
+  box-shadow: 0 0 0 3px rgba(59, 110, 247, 0.15);
+}
+
+button {
+  width: 100%;
+  margin-top: 0.5rem;
+  padding: 0.75rem;
+  background: #3b6ef7;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+  background: #335ed8;
+  transform: translateY(-1px);
+}
+
+button:active {
+  transform: translateY(1px);
+}
+
+/* === UWAGI PAGE === */
+.uwagi-section {
+  width: 100%;
+  max-width: 800px;
+  background: #fff;
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.uwaga-item p {
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.uwaga-item ul {
+  list-style: disc;
+  padding-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.uwaga-item table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+.uwaga-item th,
+.uwaga-item td {
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+.uwaga-item th {
+  background: #f3f4f6;
+  font-weight: 600;
+}
+
+/* === Subtle animation === */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

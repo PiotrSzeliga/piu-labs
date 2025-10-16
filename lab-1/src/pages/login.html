@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <title>PIU Labs</title>
+    <link rel="stylesheet" href="../css/main.css" />
+  </head>
+  <body>
+    <form action="https://httpbin.org/post" method="post" class="login-form">
+      <h1>Login</h1>
+
+      <label for="login">Login:</label>
+      <input
+        type="text"
+        id="login"
+        name="login"
+        placeholder="Wpisz login"
+        required
+      />
+
+      <label for="password">Hasło:</label>
+      <input
+        type="password"
+        id="password"
+        name="password"
+        placeholder="Wpisz hasło"
+        required
+      />
+
+      <button type="submit">Zaloguj</button>
+    </form>
+  </body>
+</html>

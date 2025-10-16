@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <title>PIU Labs</title>
+    <link rel="stylesheet" href="../css/konkurs.css" />
+  </head>
+
+  <body>
+    <input type="checkbox" id="change-theme" hidden="" />
+    <main>
+      <div class="contest-main">
+        <div class="contest-header">
+          <h2>Zgłoszenie<br />do Konkursu Plastycznego</h2>
+          <label for="change-theme" class="theme-toggle" title="Zmień motyw"
+            >🌓</label
+          >
+        </div>
+        <div class="contest-container">
+          <form
+            action="https://httpbin.org/get"
+            method="GET"
+            class="art-contest-form"
+          >
+            <div class="contest-group">
+              <label for="first_name">Imię:</label>
+              <input
+                type="text"
+                id="first_name"
+                name="first_name"
+                maxlength="30"
+                required=""
+              />
+            </div>
+            <div class="contest-group">
+              <label for="last_name">Nazwisko:</label>
+              <input
+                type="text"
+                id="last_name"
+                name="last_name"
+                maxlength="50"
+                required=""
+              />
+            </div>
+            <div class="contest-group">
+              <label for="email">Email:</label>
+              <input type="email" id="email" name="email" required="" />
+            </div>
+            <div class="contest-group">
+              <label for="city">Miasto:</label>
+              <input
+                type="text"
+                id="city"
+                name="city"
+                list="cities"
+                placeholder="Wpisz lub wybierz"
+                required=""
+              />
+              <datalist id="cities">
+                <option value="Warszawa"></option>
+                <option value="Kraków"></option>
+                <option value="Gdańsk"></option>
+                <option value="Poznań"></option>
+                <option value="Wrocław"></option>
+              </datalist>
+            </div>
+            <div class="contest-group">
+              <label for="birthday">Data urodzenia:</label>
+              <input
+                type="date"
+                id="birthday"
+                name="birthday"
+                placeholder="rrrr-mm-dd"
+                required=""
+              />
+            </div>
+            <div class="contest-group">
+              <label for="applications_count"
+                >Liczba zgłaszanych prac (od 1 do 6):</label
+              >
+              <input
+                type="number"
+                id="applications_count"
+                name="applications_count"
+                min="1"
+                max="6"
+                required=""
+              />
+            </div>
+            <div class="contest-group">
+              <label for="main_colour">Kolor wiodący prac:</label>
+              <input
+                type="color"
+                id="main_colour"
+                name="main_colour"
+                value="#ffff00"
+                required=""
+              />
+            </div>
+            <div class="contest-group">
+              <label for="category">Kategoria pracy:</label>
+              <select id="category" name="category" required="">
+                <option value="" disabled="" selected="">
+                  -- wybierz kategorię --
+                </option>
+                <option value="drawing">Rysunek</option>
+                <option value="painting">Malarstwo</option>
+                <option value="digital_graphics">Grafika Cyfrowa</option>
+              </select>
+            </div>
+
+            <fieldset class="publication">
+              <legend>Publikacja pracy online:</legend>
+              <label
+                ><input
+                  type="radio"
+                  name="publication"
+                  value="yes"
+                  required=""
+                />Tak</label
+              >
+              <label
+                ><input
+                  type="radio"
+                  name="publication"
+                  value="no"
+                  required=""
+                />Nie</label
+              >
+            </fieldset>
+            <label
+              ><input type="checkbox" name="agree-checkbox" required="" />
+              Zgadzam się na regulamin konkursu
+            </label>
+            <button type="submit" class="submit">Wyślij zgłoszenie</button>
+          </form>
+        </div>
+      </div>
+    </main>
+    <footer></footer>
+  </body>
+</html>
