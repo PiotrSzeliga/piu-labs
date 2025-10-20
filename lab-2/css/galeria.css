@@ -1,0 +1,41 @@
+html {
+  box-sizing: border-box;
+  font-size: 2vh;
+  font-family: Courier New;
+}
+
+h1 {
+  text-align: center;
+  margin: 1.5rem;
+}
+
+.galeria {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 5vh;
+  padding: 2vh;
+  @media (min-width: 1200px) {
+    column-count: 2;
+  }
+}
+
+img,
+picture {
+  border-radius: 1vh;
+  box-shadow: 0;
+  transition: box-shadow 1s;
+  @media (min-width: 1600px) {
+    min-width: 60%;
+  }
+}
+
+img:hover,
+picture:hover {
+  box-shadow: 0.1rem -0.1rem white, 0.2rem -0.2rem gray, 0.4rem -0.4rem white,
+    0.6rem -0.6rem gray, 0.8rem -0.8rem white, 1rem -1rem gray;
+  transform: scale(1.01);
+  transition-duration: 1s;
+}
