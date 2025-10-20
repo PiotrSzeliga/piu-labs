@@ -10,26 +10,27 @@ h1 {
 }
 
 .galeria {
-  display: flex;
+  /* display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-evenly;
-  align-items: center;
+  align-items: center; */
+  display: grid;
+  grid-template-columns: 1fr;
+  @media (min-width: 1200px) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
   gap: 5vh;
   padding: 2vh;
-  @media (min-width: 1200px) {
-    column-count: 2;
-  }
 }
-
 img,
 picture {
+  max-width: 100%;
+  height: auto;
+  justify-self: center;
   border-radius: 1vh;
   box-shadow: 0;
   transition: box-shadow 1s;
-  @media (min-width: 1600px) {
-    min-width: 60%;
-  }
 }
 
 img:hover,
