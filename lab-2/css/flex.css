@@ -1,0 +1,142 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2vh;
+}
+
+.theme-picker,
+.container {
+  background-color: lightyellow;
+  padding: 1.5vh;
+  border-style: solid;
+  border-radius: 8px;
+  border-width: 2px;
+  border-color: orange;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+}
+
+.item {
+  text-align: center;
+  padding: 1vh;
+  border-radius: 8px;
+  color: white;
+  box-sizing: border-box;
+}
+
+header:has(input[type='radio'][value='blue']:checked) ~ .container {
+  & .item {
+    background-color: blue;
+    width: 28%;
+  }
+  row-gap: 10px;
+  column-gap: 20px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  @media (max-width: 1024px) {
+    justify-content: center;
+    .item {
+      width: 50%;
+    }
+  }
+}
+
+header:has(input[type='radio'][value='red']:checked) ~ .container {
+  justify-content: space-between;
+  flex-wrap: wrap;
+  .item:nth-child(2) {
+    order: -1;
+  }
+  .item:nth-child(3) {
+    order: -1;
+  }
+  & .item {
+    background-color: red;
+    width: 15%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+  & :first-child {
+    font-weight: bolder;
+    width: 35%;
+  }
+  & :first-child::after {
+    display: block;
+    font-weight: lighter;
+    font-size: 0.8rem;
+    content: '(Jestem większy i na środku)';
+  }
+  @media (max-width: 1024px) {
+    column-count: 2;
+    .item {
+      width: 46%;
+    }
+    & :first-child {
+      width: 100%;
+    }
+  }
+}
+
+header:has(input[type='radio'][value='green']:checked) ~ .container {
+  & .item:nth-child(1) {
+    width: 40%;
+  }
+  & .item:nth-child(2) {
+    width: 30%;
+  }
+  & .item:nth-child(3) {
+    width: 15%;
+  }
+  & .item:nth-child(4) {
+    width: 10%;
+  }
+  & .item:nth-child(5) {
+    width: 5%;
+  }
+  & .item {
+    background-color: green;
+    width: 10%;
+  }
+  :first-child::before,
+  :first-child::after {
+    content: '😀';
+    position: absolute;
+    transform: scale(1.5);
+  }
+  :first-child::before {
+    left: 10px;
+  }
+  :first-child::after {
+    right: 10px;
+  }
+  :first-child {
+    position: relative;
+  }
+  @media (max-width: 1024px) {
+    flex-direction: column-reverse;
+    align-items: flex-end;
+    column-count: 1;
+    & .item:nth-child(1) {
+      width: 80%;
+    }
+    & .item:nth-child(2) {
+      width: 60%;
+    }
+    & .item:nth-child(3) {
+      width: 30%;
+    }
+    & .item:nth-child(4) {
+      width: 20%;
+    }
+    & .item:nth-child(5) {
+      width: 10%;
+    }
+  }
+}
