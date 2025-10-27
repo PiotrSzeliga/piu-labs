@@ -143,8 +143,8 @@ input[name="size"]:checked + label {
 }
 
 h1 {
-  justify-self: center;
   margin: 0.5em;
+  align-self: center;
 }
 
 #koszyk-button {
