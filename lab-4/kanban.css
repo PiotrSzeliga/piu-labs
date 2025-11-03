@@ -4,7 +4,8 @@
   box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
   height: 100%;
 }
 
@@ -20,8 +21,8 @@ body {
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: auto 1fr;
   grid-template-areas:
-    "title title title"
-    "todo progress done";
+    'title title title'
+    'todo progress done';
   padding: 1em;
   row-gap: 1em;
   column-gap: 1em;
@@ -47,38 +48,103 @@ h1 {
   overflow-y: auto;
 }
 
-/* .notes {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  flex: 1;
-  padding: 0.5em;
-  column-gap: 0.5em;
-  width: 100%;
-  flex-wrap: wrap;
-  background-color: lightgrey;
-  overflow-y: auto;
-} */
-
-.collumn > h2, h3 {
+.collumn > .header {
   width: 100%;
   text-align: center;
   color: black;
-  padding: 0.5em;
   font-weight: bold;
+  padding: 0.5em;
+
+  h2,
+  h3,
+  .menu {
+    margin: 0.4em;
+  }
 }
 
-#todo > h2 {
-  grid-area: todo;
-  background-color: red;
+.header > .menu {
+  display: flex;
+  justify-content: space-evenly;
 }
 
-#progress > h2 {
-  grid-area: progress;
-  background-color: orange;
+#todo > .header {
+  background-color: #ff9999;
 }
 
-#done > h2 {
-  grid-area: done;
-  background-color: seagreen;
+#todo > .card > .card-footer > .left {
+  visibility: hidden;
+  pointer-events: none;
+}
+
+#progress > .header {
+  background-color: #99ff99;
+}
+
+#done > .header {
+  background-color: #9999ff;
+}
+
+#done > .card > .card-footer > .right {
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.card {
+  display: inline-block;
+  width: calc(100% - 2em);
+  margin: 1em;
+  padding: 0.5em;
+  padding-bottom: 0.1em;
+  overflow: hidden;
+  position: relative;
+}
+
+.card-header {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0.5em;
+  margin-bottom: 0.25em;
+}
+
+.card-title {
+  margin-bottom: 0.3em;
+  font-weight: bolder;
+  text-decoration: none;
+  padding-right: 1.6rem;
+}
+
+.card-x {
+  cursor: pointer;
+  position: absolute;
+  padding: 0.2em;
+  right: 0.2rem;
+  top: 0rem;
+}
+
+.card-text {
+  margin-bottom: 0.4em;
+  font-weight: light;
+  text-decoration: none;
+}
+
+.card-footer {
+  text-align: center;
+  font-size: 0.8em;
+  gap: 0.5em;
+}
+
+.card-footer > button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  margin: 0 0.5em;
+}
+
+.menu button {
+  padding: 0.3em 0.5em;
+  border: none;
+  background-color: white;
+  cursor: pointer;
+  font-weight: bold;
 }
