@@ -1,0 +1,84 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  font-family: 'Courier New', Courier, monospace;
+  background-color: lightgray;
+}
+
+#board {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto 1fr;
+  grid-template-areas:
+    "title title title"
+    "todo progress done";
+  padding: 1em;
+  row-gap: 1em;
+  column-gap: 1em;
+  width: min(calc(900px + 6em), 100%);
+  background-color: white;
+  overflow: hidden;
+}
+
+h1 {
+  grid-area: title;
+  width: 100%;
+  font-weight: bold;
+  text-align: center;
+}
+
+.collumn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+  flex-wrap: wrap;
+  background-color: aliceblue;
+  overflow-y: auto;
+}
+
+/* .notes {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+  padding: 0.5em;
+  column-gap: 0.5em;
+  width: 100%;
+  flex-wrap: wrap;
+  background-color: lightgrey;
+  overflow-y: auto;
+} */
+
+.collumn > h2, h3 {
+  width: 100%;
+  text-align: center;
+  color: black;
+  padding: 0.5em;
+  font-weight: bold;
+}
+
+#todo > h2 {
+  grid-area: todo;
+  background-color: red;
+}
+
+#progress > h2 {
+  grid-area: progress;
+  background-color: orange;
+}
+
+#done > h2 {
+  grid-area: done;
+  background-color: seagreen;
+}
