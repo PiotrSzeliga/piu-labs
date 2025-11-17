@@ -19,7 +19,6 @@ function createCard(data = {}) {
     const card = document.createElement('div');
     card.className = 'card';
     card.id = data.id !== undefined ? String(data.id) : `${idCount++}`;
-    card.selected = false;
     card.style.backgroundColor = data.color || randomHsl();
 
     const header = document.createElement('div');
@@ -112,15 +111,18 @@ function loadState() {
         idCount = parsed.idCount || 0;
 
         ['todo', 'progress', 'done'].forEach((colId) => {
-            const col = document.getElementById(colId);
-            if (!col) return;
-            Array.from(col.getElementsByClassName('card')).forEach((c) =>
+            const column = document.getElementById(colId);
+            const column_cards = column.querySelector('.cards');
+
+            if (!column) return;
+            Array.from(column.getElementsByClassName('card')).forEach((c) =>
                 c.remove()
             );
+
             const arr = parsed[colId] || [];
             arr.forEach((cdata) => {
                 const card = createCard(cdata);
-                col.appendChild(card);
+                column_cards.appendChild(card);
             });
         });
 
@@ -145,6 +147,9 @@ function handleColumnEvents(event) {
     const column = event.target.closest('.collumn');
     if (!column) return;
 
+    const column_cards = column.querySelector('.cards');
+    if (!column_cards) return;
+
     const getCounter = (e) => {
         switch (e) {
             case 'todo':
@@ -160,7 +165,7 @@ function handleColumnEvents(event) {
 
     if (event.target.classList.contains('add')) {
         const card = createCard();
-        column.appendChild(card);
+        column_cards.appendChild(card);
         const [count, setCount] = getCounter(column.id);
         setCount(count + 1);
         updateCounters();
@@ -192,7 +197,8 @@ function handleColumnEvents(event) {
         const [count, setCount] = getCounter(column.id);
         setCount(count - 1);
         const nextColumn = column.nextElementSibling;
-        nextColumn.appendChild(card);
+        const nextColumn_cards = nextColumn.querySelector('.cards');
+        nextColumn_cards.appendChild(card);
         const [nextCount, setNextCount] = getCounter(nextColumn.id);
         setNextCount(nextCount + 1);
         updateCounters();
@@ -205,7 +211,8 @@ function handleColumnEvents(event) {
         const [count, setCount] = getCounter(column.id);
         setCount(count - 1);
         const prevColumn = column.previousElementSibling;
-        prevColumn.appendChild(card);
+        const prevColumn_cards = prevColumn.querySelector('.cards');
+        prevColumn_cards.appendChild(card);
         const [prevCount, setPrevCount] = getCounter(prevColumn.id);
         setPrevCount(prevCount + 1);
         updateCounters();
@@ -221,7 +228,9 @@ function handleColumnEvents(event) {
     }
 
     if (event.target.classList.contains('sort')) {
-        const cardsArray = Array.from(column.getElementsByClassName('card'));
+        const cardsArray = Array.from(
+            column_cards.getElementsByClassName('card')
+        );
         cardsArray.sort((a, b) => {
             const titleA = a
                 .querySelector('.card-title')
@@ -231,7 +240,7 @@ function handleColumnEvents(event) {
                 .textContent.toLowerCase();
             return titleA.localeCompare(titleB);
         });
-        cardsArray.forEach((card) => column.appendChild(card));
+        cardsArray.forEach((card) => column_cards.appendChild(card));
         saveState();
         return;
     }
