@@ -1,0 +1,61 @@
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  margin: 30px;
+  min-width: 200px;
+}
+
+h1 {
+  font-size: xx-large;
+}
+
+.controls {
+  margin-bottom: 12px;
+}
+
+button {
+  margin: 4px;
+  padding: 12px;
+  min-width: 150px;
+  cursor: pointer;
+  font-size: large;
+}
+
+.counters {
+  margin: 12px 0;
+  font-size: larger;
+}
+
+.board {
+  margin: 12px auto;
+  min-width: 150px;
+  max-width: 750px;
+  min-height: 240px;
+  border: 2px dashed #ccc;
+  padding: 12px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  background: #fafafa;
+  align-content: flex-start;
+}
+
+.shape {
+  width: 60px;
+  height: 60px;
+  cursor: pointer;
+  transition: transform 0.2s, background-color 0.3s;
+  border: 3px solid black;
+}
+
+.shape:hover {
+  transform: scale(1.1);
+}
+
+.square {
+  border-radius: 6px;
+}
+
+.circle {
+  border-radius: 50%;
+}
