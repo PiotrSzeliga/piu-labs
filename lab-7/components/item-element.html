@@ -1,0 +1,98 @@
+<div class="image">
+  <slot name="image"></slot>
+</div>
+<slot name="name"></slot>
+<div class="optional">
+  <div><slot name="colours"></slot></div>
+  <div><slot name="sizes"></slot></div>
+  <div><slot name="promotion"></slot></div>
+</div>
+<div><slot name="price"></slot></div>
+<button class="basket">Do koszyka</button>
+
+<style>
+  :host {
+    display: block;
+    padding: 10px;
+    width: 260px;
+    font-family: sans-serif;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+  }
+
+  .image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 180px;
+    overflow: hidden;
+    background: #fff;
+  }
+
+  ::slotted([slot='image']) {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto;
+  }
+
+  ::slotted([slot='name']) {
+    display: block;
+    font-weight: 700;
+    margin: 12px 0 8px 0;
+    text-align: center;
+  }
+
+  ::slotted([slot='price']) {
+    display: block;
+    text-align: center;
+    font-weight: 700;
+    margin: 8px 0;
+  }
+
+  .optional {
+    display: flex;
+    gap: 10px;
+    justify-content: space-around;
+    margin-bottom: 8px;
+  }
+
+  ::slotted([slot='colours']) {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+  }
+
+  ::slotted([slot='colours']) .swatch {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    border: 1px solid rgba(0, 0, 0, 0.06);
+  }
+
+  ::slotted([slot='promotion']) {
+    padding: 6px;
+    border-radius: 8px;
+    font-weight: 700;
+    display: inline-block;
+  }
+
+  .basket {
+    display: block;
+    margin: 12px auto 0;
+    padding: 8px 16px;
+    border-radius: 20px;
+    background: #3a0c57;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+  }
+
+  .basket:hover {
+    opacity: 0.95;
+  }
+</style>

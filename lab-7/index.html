@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Lab 7 — Produkt card</title>
+    <link rel="stylesheet" href="style.css" />
+    <script type="module" src="./app.js"></script>
+  </head>
+  <body>
+    <h1>Karty produktów - Lab 7</h1>
+    <div class="products">
+      <product-card>
+        <span slot="name">Backpack</span>
+        <span slot="price">400zł</span>
+        <img slot="image" src="./pictures/backpack.jpg" />
+        <span slot="colours">
+          <button class="black"></button>
+          <button class="white"></button>
+          <button class="blue"></button>
+        </span>
+        <span slot="sizes">
+          <button class="size">S</button>
+          <button class="size">M</button>
+          <button class="size">L</button>
+        </span>
+        <span slot="promo">PROMOCJA: -20%</span>
+      </product-card>
+
+      <product-card>
+        <span slot="name">Cap</span>
+        <span slot="price">100zł</span>
+        <img slot="image" src="./pictures/cap.jpg" />
+        <span slot="colours">
+          <button class="black"></button>
+          <button class="white"></button>
+          <button class="blue"></button>
+        </span>
+        <span slot="sizes">
+          <button class="size">S</button>
+          <button class="size">M</button>
+          <button class="size">L</button>
+        </span>
+      </product-card>
+
+      <product-card>
+        <span slot="name">Dress</span>
+        <span slot="price">350zł</span>
+        <img slot="image" src="./pictures/dress.jpg" />
+        <span slot="sizes">
+          <button class="size">S</button>
+          <button class="size">M</button>
+          <button class="size">L</button>
+          <button class="size">XL</button>
+        </span>
+      </product-card>
+
+      <product-card>
+        <span slot="name">Hoodie</span>
+        <span slot="price">200zł</span>
+        <img slot="image" src="./pictures/hoodie.jpg" />
+        <span slot="sizes">
+          <button class="size">S</button>
+          <button class="size">M</button>
+          <button class="size">L</button>
+        </span>
+      </product-card>
+
+      <product-card>
+        <span slot="name">Sweater</span>
+        <span slot="price">150zł</span>
+        <img slot="image" src="./pictures/sweater.jpg" />
+        <span slot="sizes">
+          <button class="size">S</button>
+          <button class="size">M</button>
+          <button class="size">L</button>
+          <button class="size">XL</button>
+        </span>
+      </product-card>
+
+      <product-card>
+        <span slot="name">T-shirt</span>
+        <span slot="price">80zł</span>
+        <img slot="image" src="./pictures/tshirt.jpg" />
+        <span slot="promo"></span>
+      </product-card>
+    </div>
+  </body>
+</html>
