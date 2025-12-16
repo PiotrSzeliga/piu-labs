@@ -1,23 +1,38 @@
-<div class="image">
-  <slot name="image"></slot>
+<div class="item-element">
+  <div class="image">
+    <slot name="image"></slot>
+  </div>
+  <slot name="name"></slot>
+  <div class="optional">
+    <div><slot name="colours"></slot></div>
+    <div><slot name="sizes"></slot></div>
+    <div><slot name="promotion"></slot></div>
+  </div>
+  <div><slot name="price"></slot></div>
+  <button class="basket">Do koszyka</button>
 </div>
-<slot name="name"></slot>
-<div class="optional">
-  <div><slot name="colours"></slot></div>
-  <div><slot name="sizes"></slot></div>
-  <div><slot name="promotion"></slot></div>
-</div>
-<div><slot name="price"></slot></div>
-<button class="basket">Do koszyka</button>
 
 <style>
   :host {
     display: block;
-    padding: 10px;
-    width: 260px;
+    padding: 18px;
+    width: 100%;
+    max-width: none;
     font-family: sans-serif;
-    margin-bottom: 20px;
+    margin: 24px 0;
     box-sizing: border-box;
+  }
+
+  .item-element {
+    display: flex;
+    flex-direction: column;
+    border-radius: 14px;
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+    padding: 22px;
+    box-sizing: border-box;
+    background: white;
+    min-height: 620px;
   }
 
   .image {
@@ -25,9 +40,10 @@
     align-items: center;
     justify-content: center;
     width: 100%;
-    height: 180px;
+    height: 300px;
     overflow: hidden;
     background: #fff;
+    flex: 0 0 auto;
   }
 
   ::slotted([slot='image']) {
@@ -42,57 +58,90 @@
 
   ::slotted([slot='name']) {
     display: block;
-    font-weight: 700;
-    margin: 12px 0 8px 0;
+    font-weight: 800;
+    margin: 14px 0 10px 0;
     text-align: center;
+    font-size: 1.25rem;
   }
 
   ::slotted([slot='price']) {
     display: block;
     text-align: center;
-    font-weight: 700;
-    margin: 8px 0;
+    font-weight: 800;
+    font-size: 1.05rem;
   }
 
   .optional {
     display: flex;
-    gap: 10px;
-    justify-content: space-around;
-    margin-bottom: 8px;
+    flex-direction: column;
+    align-items: center;
+    margin: 14px 0;
+    gap: 1.25rem;
+  }
+
+  .optional > div {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
   }
 
   ::slotted([slot='colours']) {
     display: flex;
-    gap: 6px;
+    gap: 8px;
     align-items: center;
   }
 
   ::slotted([slot='colours']) .swatch {
-    width: 18px;
-    height: 18px;
+    width: 1.1rem;
+    height: 1.1rem;
     border-radius: 50%;
     border: 1px solid rgba(0, 0, 0, 0.06);
   }
 
   ::slotted([slot='promotion']) {
-    padding: 6px;
-    border-radius: 8px;
-    font-weight: 700;
+    padding: 8px 10px;
+    border-radius: 10px;
+    font-weight: 800;
     display: inline-block;
   }
 
   .basket {
+    margin-top: auto;
     display: block;
-    margin: 12px auto 0;
-    padding: 8px 16px;
-    border-radius: 20px;
-    background: #3a0c57;
+    padding: 12px 22px;
+    border-radius: 26px;
+    background: #111;
     color: #fff;
     border: none;
     cursor: pointer;
+    font-weight: 800;
+    transition: transform 180ms ease, box-shadow 180ms ease,
+      opacity 120ms linear;
+    transform-origin: center;
+    will-change: transform;
   }
 
   .basket:hover {
-    opacity: 0.95;
+    transform: scale(1.07);
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.16);
+    opacity: 0.98;
+  }
+
+  .basket:active {
+    transform: scale(0.98);
+  }
+
+  @media (max-width: 640px) {
+    .item-element {
+      min-height: 520px;
+      padding: 16px;
+    }
+    .image {
+      height: 220px;
+    }
+    ::slotted([slot='name']) {
+      font-size: 1.05rem;
+    }
   }
 </style>

@@ -10,80 +10,86 @@
   <body>
     <h1>Karty produktów - Lab 7</h1>
     <div class="products">
-      <product-card>
+      <item-element>
+        <img slot="image" src="./pictures/backpack.jpg" alt="Backpack" />
         <span slot="name">Backpack</span>
-        <span slot="price">400zł</span>
-        <img slot="image" src="./pictures/backpack.jpg" />
         <span slot="colours">
-          <button class="black"></button>
-          <button class="white"></button>
-          <button class="blue"></button>
+          <button class="swatch" style="background: #000"></button>
+          <button
+            class="swatch"
+            style="background: #fff; border: 1px solid #ddd"
+          ></button>
+          <button class="swatch" style="background: #0ea5a4"></button>
         </span>
         <span slot="sizes">
           <button class="size">S</button>
           <button class="size">M</button>
           <button class="size">L</button>
         </span>
-        <span slot="promo">PROMOCJA: -20%</span>
-      </product-card>
+        <span slot="price">400 zł</span>
+      </item-element>
 
-      <product-card>
+      <item-element>
+        <img slot="image" src="./pictures/cap.jpg" alt="Cap" />
         <span slot="name">Cap</span>
-        <span slot="price">100zł</span>
-        <img slot="image" src="./pictures/cap.jpg" />
-        <span slot="colours">
-          <button class="black"></button>
-          <button class="white"></button>
-          <button class="blue"></button>
-        </span>
         <span slot="sizes">
           <button class="size">S</button>
           <button class="size">M</button>
           <button class="size">L</button>
         </span>
-      </product-card>
+        <span slot="promotion">-20%</span>
+        <span slot="price">100 zł</span>
+      </item-element>
 
-      <product-card>
+      <item-element>
+        <img slot="image" src="./pictures/dress.jpg" alt="Dress" />
         <span slot="name">Dress</span>
-        <span slot="price">350zł</span>
-        <img slot="image" src="./pictures/dress.jpg" />
         <span slot="sizes">
           <button class="size">S</button>
           <button class="size">M</button>
           <button class="size">L</button>
           <button class="size">XL</button>
         </span>
-      </product-card>
+        <span slot="price">250 zł</span>
+      </item-element>
 
-      <product-card>
+      <item-element>
+        <img slot="image" src="./pictures/hoodie.jpg" alt="Hoodie" />
         <span slot="name">Hoodie</span>
-        <span slot="price">200zł</span>
-        <img slot="image" src="./pictures/hoodie.jpg" />
+        <span slot="colours">
+          <button class="swatch" style="background: #000"></button>
+          <button
+            class="swatch"
+            style="background: #fff; border: 1px solid #ddd"
+          ></button>
+          <button class="swatch" style="background: #2563eb"></button>
+        </span>
         <span slot="sizes">
           <button class="size">S</button>
           <button class="size">M</button>
           <button class="size">L</button>
         </span>
-      </product-card>
+        <span slot="price">180 zł</span>
+      </item-element>
 
-      <product-card>
+      <item-element>
+        <img slot="image" src="./pictures/sweater.jpg" alt="Sweater" />
         <span slot="name">Sweater</span>
-        <span slot="price">150zł</span>
-        <img slot="image" src="./pictures/sweater.jpg" />
         <span slot="sizes">
           <button class="size">S</button>
           <button class="size">M</button>
           <button class="size">L</button>
           <button class="size">XL</button>
         </span>
-      </product-card>
+        <span slot="promotion">-15%</span>
+        <span slot="price">150 zł</span>
+      </item-element>
 
-      <product-card>
-        <span slot="name">T-shirt</span>
-        <span slot="price">80zł</span>
-        <img slot="image" src="./pictures/tshirt.jpg" />
-        <span slot="promo"></span>
-      </product-card>
+      <item-element>
+        <img slot="image" src="./pictures/tshirt.jpg" alt="T-shirt" />
+        <span slot="name">T‑shirt</span>
+        <span slot="price">80 zł</span>
+      </item-element>
     </div>
   </body>
 </html>
