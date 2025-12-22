@@ -1,0 +1,111 @@
+<div class="cart">
+  <h3>Koszyk</h3>
+  <div class="items"></div>
+
+  <div class="cart-footer">
+    <div class="total-label">Razem</div>
+    <div class="total-amount">0 zł</div>
+  </div>
+</div>
+
+<style>
+  .cart {
+    background: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    padding: 12px;
+    border-radius: 10px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    min-width: 150px;
+    overflow-y: scroll;
+    scrollbar-width: none;
+  }
+  .cart h3 {
+    margin-top: 0;
+    font-size: 1.25rem;
+    text-align: center;
+  }
+
+  .items {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    flex: 1 1 auto;
+    overflow-y: scroll;
+    scrollbar-width: none;
+  }
+  .cart-item {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .left {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+  }
+
+  .thumb {
+    width: 48px;
+    height: 48px;
+    object-fit: cover;
+    border-radius: 6px;
+    flex: 0 0 48px;
+    background: #f7f7f7;
+  }
+
+  .info .name {
+    font-weight: 700;
+    font-size: 0.95rem;
+  }
+
+  .info .price {
+    font-size: 0.85rem;
+    color: #444;
+  }
+
+  .remove {
+    background: black;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    padding: 6px 8px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    color: white;
+  }
+
+  .remove:hover {
+    transform: scale(1.07);
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.16);
+    opacity: 0.98;
+  }
+
+  .remove:active {
+    transform: scale(0.98);
+  }
+
+  .cart-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid rgba(0, 0, 0, 0.04);
+  }
+
+  .total-label {
+    color: #666;
+    font-weight: 700;
+  }
+
+  .total-amount {
+    font-weight: 900;
+    font-size: 1.05rem;
+  }
+</style>

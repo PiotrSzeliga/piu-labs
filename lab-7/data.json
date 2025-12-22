@@ -1,0 +1,41 @@
+[
+  {
+    "name": "Backpack",
+    "image": "./pictures/backpack.jpg",
+    "colours": ["#000", "#fff", "#0ea5a4"],
+    "sizes": ["S", "M", "L"],
+    "price": "400 zł"
+  },
+  {
+    "name": "Cap",
+    "image": "./pictures/cap.jpg",
+    "sizes": ["S", "M", "L"],
+    "promotion": "-20%",
+    "price": "100 zł"
+  },
+  {
+    "name": "Dress",
+    "image": "./pictures/dress.jpg",
+    "sizes": ["S", "M", "L", "XL"],
+    "price": "250 zł"
+  },
+  {
+    "name": "Hoodie",
+    "image": "./pictures/hoodie.jpg",
+    "colours": ["#000", "#fff", "#2563eb"],
+    "sizes": ["S", "M", "L"],
+    "price": "180 zł"
+  },
+  {
+    "name": "Sweater",
+    "image": "./pictures/sweater.jpg",
+    "sizes": ["S", "M", "L", "XL"],
+    "promotion": "-15%",
+    "price": "150 zł"
+  },
+  {
+    "name": "T-shirt",
+    "image": "./pictures/tshirt.jpg",
+    "price": "80 zł"
+  }
+]
